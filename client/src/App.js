@@ -25,7 +25,7 @@ function App() {
     <div>
       <Router>
         <nav className="container">
-          <h1>React Plants 🌿</h1>
+          <h1>React Plants</h1><span>🌿</span>
           <ul className="steps">
             <li>
               <NavLink exact to="/">
