@@ -1,6 +1,6 @@
 import React from "react";
 import * as rtl from '@testing-library/react'
-import { render, fireEvent, findByTestId } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
 
 // Write up the two tests here and make sure they are testing what the title shows
