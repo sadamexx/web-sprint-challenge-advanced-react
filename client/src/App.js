@@ -5,6 +5,7 @@ import PlantList from "./components/PlantList";
 import ShoppingCart from "./components/ShoppingCart";
 import CheckoutForm from "./components/CheckoutForm";
 
+
 import "./App.css";
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
     <div>
       <Router>
         <nav className="container">
-          <h1>React Plants 🌿</h1>
+          <h1>React Plants🌿</h1>          
           <ul className="steps">
             <li>
               <NavLink exact to="/">
@@ -41,7 +42,7 @@ function App() {
               </NavLink>
             </li>
           </ul>
-        </nav>
+        </nav>        
         <Route
           exact
           path="/"

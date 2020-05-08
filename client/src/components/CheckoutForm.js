@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useForm } from '../hooks/useForm';
 
 const initialValue = {
   firstName: "",
@@ -7,6 +8,7 @@ const initialValue = {
   city: "",
   state: "",
   zip: "",
+  showSuccessMessage: false
 };
 
 // This form should be handled by a "useForm" custom hook
@@ -14,16 +16,12 @@ const initialValue = {
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
 const CheckoutForm = (props) => {
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [values, setValues] = useState(initialValue);
-
-  const handleChanges = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+  const [values, setValues, handleChanges] = useForm('form',initialValue)
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setShowSuccessMessage(true);
+   if(e) e.preventDefault();    
+    setValues({...values, showSuccessMessage: true});
+    
   };
 
   return (
@@ -69,9 +67,10 @@ const CheckoutForm = (props) => {
         <button>Checkout</button>
       </form>
 
-      {showSuccessMessage && (
+      {values.showSuccessMessage && (
         <div className="success-message" data-testid="successMessage">
-          <p>You have ordered some plants! Woo-hoo! 🎉</p>
+          <p>You have ordered some plants! Woo-hoo!</p> 
+          <span>🎉</span>
           <p>Your new green friends will be shipped to:</p>
           <br />
           <br />
